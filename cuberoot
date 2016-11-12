@@ -1,0 +1,12 @@
+y=input('enter a number')
+l=0.00
+h=y
+p=0.01
+m=0.00
+while abs(y-m*m*m)>p:
+    m=(h+l)/2
+    if m*m*m > y:
+        h=m
+    else:
+        l=m
+print m
