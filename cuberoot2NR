@@ -1,0 +1,7 @@
+y=input('enter a number')
+p=0.001
+m=0.00
+m=y/2.0
+while abs(y-m*m*m)>p:
+    m=m-((m*m*m)/(3*m*m))
+print m
