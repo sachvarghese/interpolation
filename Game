@@ -5,7 +5,7 @@ class Player():
 	posx=0
 	posy=0
 class Enemy():
-	power=10
+	power=15
 	posx=0
 	posy=0
 class Food():
@@ -127,7 +127,7 @@ while True:
 	if e==0:
 		print "YOU WIN, YOU KILLED ALL THE ENEMIES"
 		break
-	
+
 
 
 
