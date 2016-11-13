@@ -12,14 +12,11 @@ class Food():
 	add=10
 	posx=0
 	posy=0
-class rock():
+class Rock():
 	sub=10
 	posx=0
 	posy=0
-print "How many enemies would you like to face(1 to 3 recommended)"
-e=input()
-if e<=0:
-	e=1
+e=2
 p1=Player()
 p1.name=raw_input("Enter player name")
 p1.posx=input("enter x coordinate")
@@ -33,12 +30,12 @@ if p1.posy >10:
 if p1.posy < 0:
 	p1.posy=0
 from random import randint
-i=0
-for i in range e:
-	en[i]=Enemy()
-	en[i].posx=randint(0,10)
-	en[i].posy=randint(0,10)
-	i=i+1
+en1=Enemy()
+en1.posx=randint(0,10)
+en1.posy=randint(0,10)
+en2=Enemy()
+en2.posx=randint(0,10)
+en2.posy=randint(0,10)
 f1=Food()
 f1.posx=randint(0,10)
 f1.posy=randint(0,10)
@@ -60,73 +57,65 @@ if r1.posx==r2.posx and r1.posy==r2.posy:
 	if r2.posx>10:
 		r2.posx=0
 while True:
-	dir=raw_input("enter W A S or D")
-	if dir=="w":
+	dir=input("enter 1-up 2-left 3-down or 4-right")
+	if dir==1:
 		p1.posy=p1.posy+1
 		if p1.posy>10:
 			p1.posy=0
-	else if dir=="a":
+	if dir==2:
 		p1.posx=p1.posx-1
 		if p1.posx<0:
 			p1.posx=10
-	else if dir=="s":
+	if dir==3:
 		p1.posy=p1.posy-1
 		if p1.posy<0:
 			p1.posy=10
-	else if dir=="d":
+	if dir==4:
 		p1.posx=p1.posx+1
 		if p1.posx>10:
 			p1.posx=0
-	else 
+	else:
 		print "GAME OVER, YOU SURRENDERED"
 		break
 	print "Player",p1.name,"is now on",p1.posx, p1.posy
-	i=0
-	for i in range e
-		if p1.posx==en[i].posx and p1.posy==en[i].posy:
-			if p1.power>en[i].power:
-				en[i].power=0
-				en[i].posx=-1
-				e=e-1
-			else if p1.power<en[i].power:
-				p1.power=p1.power-10
-				if p1.power<=0:
-					print "GAME OVER YOU LOSE THE ENEMY KILLED YOU"
-					break
-	if p1.posx==r1.posx and p1.posy=r1.posy:
+	if p1.posx==en1.posx and p1.posy==en1.posy:
+		if p1.power>en1.power:
+			en1.power=0
+			en1.posx=-1
+			e=e-1
+		if p1.power<en2.power:
+			p1.power=p1.power-10
+			if p1.power<=0:
+				print "GAME OVER YOU LOSE THE ENEMY KILLED YOU"
+				break
+	if p1.posx==en2.posx and p1.posy==en2.posy:
+		if p1.power>en2.power:
+			en2.power=0
+			en2.posx=-1
+			e=e-1
+		if p1.power<en2.power:
+			p1.power=p1.power-10
+			if p1.power<=0:
+			    print "GAME OVER YOU LOSE THE ENEMY KILLED YOU"
+			    break
+	if p1.posx==r1.posx and p1.posy==r1.posy:
 		print "YOU HIT A ROCK , POWER-10"
 		p1.power=p1.power-10
 		if p1.power<=0:
 			print "GAME OVER YOU LOSE A ROCK KILLED YOU,SHAME ON YOU"
 			break
-	if p1.posx==r2.posx and p1.posy=r2.posy:
+	if p1.posx==r2.posx and p1.posy==r2.posy:
 		print "YOU HIT A ROCK , POWER-10"
 		p1.power=p1.power-10
 		if p1.power<=0:
 			print "GAME OVER YOU LOSE A ROCK KILLED YOU, SHAME ON YOU"
 			break
-	if p1.posx==f1.posx and p1.posy=f1.posy:
+	if p1.posx==f1.posx and p1.posy==f1.posy:
 		print "YOU HIT FOOD , POWER+10"
 		p1.power=p1.power+10
-	if p1.posx==f2.posx and p1.posy=f2.posy:
+	if p1.posx==f2.posx and p1.posy==f2.posy:
 		print "YOU HIT FOOD , POWER+10"
 		p1.power=p1.power+10
-	if e==0
+	if e==0:
 		print "YOU WIN, YOU KILLED ALL THE ENEMIES"
 		break
-
-	
-	
-	
-	
-				
-	
-	
-		
-	
-	
-
-
-
-
-
