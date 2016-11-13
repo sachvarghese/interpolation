@@ -90,8 +90,10 @@ while True:
 			en1.power=0
 			en1.posx=-1
 			e=e-1
+			print "You killed an enemy"
 		if p1.power<en2.power:
 			p1.power=p1.power-10
+			print "You lost 10 power"
 			if p1.power<=0:
 				print "GAME OVER YOU LOSE THE ENEMY KILLED YOU"
 				break
