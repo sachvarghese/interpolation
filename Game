@@ -74,10 +74,16 @@ while True:
 		p1.posx=p1.posx+1
 		if p1.posx>10:
 			p1.posx=0
-	else:
+	if dir==5:
 		print "GAME OVER, YOU SURRENDERED"
 		break
 	print "Player",p1.name,"is now on",p1.posx, p1.posy
+	print "Rock1 is on",r1.posx, r1.posy
+	print "Rock2 is on",r2.posx, r2.posy
+	print "food1 is on",f1.posx, f2.posy
+	print "food2 is on",f2.posx, f2.posy
+	print "enemy1 is on",en1.posx, en1.posy
+	print "enemy2 is on",en2.posx, en2.posy
 	if p1.posx==en1.posx and p1.posy==en1.posy:
 		if p1.power>en1.power:
 			en1.power=0
@@ -119,3 +125,13 @@ while True:
 	if e==0:
 		print "YOU WIN, YOU KILLED ALL THE ENEMIES"
 		break
+
+	
+	
+
+	
+
+
+
+
+
