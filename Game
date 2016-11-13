@@ -9,11 +9,11 @@ class Enemy():
 	posx=0
 	posy=0
 class Food():
-	add=10
+	power=10
 	posx=0
 	posy=0
 class Rock():
-	sub=10
+	power=10
 	posx=0
 	posy=0
 e=2
@@ -57,7 +57,7 @@ if r1.posx==r2.posx and r1.posy==r2.posy:
 	if r2.posx>10:
 		r2.posx=0
 while True:
-	dir=input("enter 1-up 2-left 3-down or 4-right")
+	dir=input("enter 1-up 2-left 3-down or 4-right 5- surrender")
 	if dir==1:
 		p1.posy=p1.posy+1
 		if p1.posy>10:
@@ -116,19 +116,17 @@ while True:
 		if p1.power<=0:
 			print "GAME OVER YOU LOSE A ROCK KILLED YOU, SHAME ON YOU"
 			break
-	if p1.posx==f1.posx and p1.posy==f1.posy:
+	if p1.posx==f1.posx and p1.posy==f1.posy and f1.power>0:
 		print "YOU HIT FOOD , POWER+10"
-		p1.power=p1.power+10
-	if p1.posx==f2.posx and p1.posy==f2.posy:
+		p1.power=p1.power+f1.power
+		f1.power=0
+	if p1.posx==f2.posx and p1.posy==f2.posy and f2.power>0:
 		print "YOU HIT FOOD , POWER+10"
-		p1.power=p1.power+10
+		p1.power=p1.power+f1.power
+		f2.power=0
 	if e==0:
 		print "YOU WIN, YOU KILLED ALL THE ENEMIES"
 		break
-
-	
-	
-
 	
 
 
