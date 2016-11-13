@@ -17,6 +17,7 @@ class Rock():
 	posx=0
 	posy=0
 e=2
+print "INSTRUCTIONS: Your power=10, ENEMY power=15, Rocks Remove 10 from your power, Food increases power by 10,  food can be used only once"
 p1=Player()
 p1.name=raw_input("Enter player name")
 p1.posx=input("enter x coordinate")
@@ -127,9 +128,3 @@ while True:
 	if e==0:
 		print "YOU WIN, YOU KILLED ALL THE ENEMIES"
 		break
-
-
-
-
-
-
